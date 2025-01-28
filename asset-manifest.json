@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/mero02/mi-portfolio.git/static/css/main.911819d6.css",
-    "main.js": "/mero02/mi-portfolio.git/static/js/main.0fa748f0.js",
-    "index.html": "/mero02/mi-portfolio.git/index.html",
-    "main.911819d6.css.map": "/mero02/mi-portfolio.git/static/css/main.911819d6.css.map",
-    "main.0fa748f0.js.map": "/mero02/mi-portfolio.git/static/js/main.0fa748f0.js.map"
+    "main.css": "/mi-portfolio/static/css/main.911819d6.css",
+    "main.js": "/mi-portfolio/static/js/main.be169921.js",
+    "index.html": "/mi-portfolio/index.html",
+    "main.911819d6.css.map": "/mi-portfolio/static/css/main.911819d6.css.map",
+    "main.be169921.js.map": "/mi-portfolio/static/js/main.be169921.js.map"
   },
   "entrypoints": [
     "static/css/main.911819d6.css",
-    "static/js/main.0fa748f0.js"
+    "static/js/main.be169921.js"
   ]
 }
