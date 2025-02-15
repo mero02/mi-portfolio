@@ -1,7 +1,16 @@
 import React from 'react';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Projects = () => {
   const projects = [
+    {
+      title: '🧾 Gestión de Finanzas Personales (Personal, 2025)',
+      description: 'Desarrollé una aplicación web completa para la gestión de finanzas personales, desde el diseño de la interfaz hasta la implementación del backend y la base de datos.',
+      Tecnologías: 'FastAPI, React',
+      Repositorio: 'https://github.com/mero02/gestion-presupuestos',
+    },
     {
       title: '🌱 Sistema de Monitoreo de Datos Ambientales (UNPSJB, 2024)',
       description: 'Diseñé y desarrollé un sistema para visualizar datos ambientales en tiempo real con alertas automatizadas vía Telegram.',
@@ -40,10 +49,37 @@ const Projects = () => {
     },
   ];
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1, 
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+  
+
   return (
     <section id="projects">
       <h2>Proyectos</h2>
-      <div>
+      <Slider {...settings}>
         {projects.map((project, index) => (
           <div key={index} className="project">
             <h3>{project.title}</h3>
@@ -52,7 +88,7 @@ const Projects = () => {
             <a href={project.Repositorio} target="_blank" rel="noreferrer">Ver Repositorio</a>
           </div>
         ))}
-      </div>
+      </Slider>
     </section>
   );
 };
