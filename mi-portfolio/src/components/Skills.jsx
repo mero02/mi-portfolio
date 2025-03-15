@@ -6,8 +6,9 @@ const Skills = () => {
   const bases_de_datos = ['SQLite', 'PostgreSQL'];
   const control_versiones = ['Git', 'GitHub'];
   const metodologias = ['Scrum', 'Kanban'];
+  const herramientas = ['Slack', 'Jira', 'Github Project',]
   const habilidades_blandas = ['Analisis de requisitos', 'Trabajo en equipo', 'Comunicación', 'Proactividad', 'Adaptabilidad', 'Resolución de problemas'];
-  
+
   return (
     <section id="skills">
       <h2>Habilidades</h2>
@@ -38,6 +39,12 @@ const Skills = () => {
       <h3>Metodologías:</h3>
       <ul>
         {metodologias.map((skill, index) => (
+          <li key={index}>{skill}</li>
+        ))}
+      </ul>
+      <h3>Herramientas de colaboración:</h3>
+      <ul>
+        {herramientas.map((skill, index) => (
           <li key={index}>{skill}</li>
         ))}
       </ul>

@@ -44,6 +44,53 @@ header h1 {
   letter-spacing: -0.5px;
 }
 
+/* Estilos para el botón de hamburguesa */
+.hamburger {
+  display: none; /* Ocultar en pantallas grandes */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--header-text);
+  cursor: pointer;
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  z-index: 1001;
+}
+
+/* Estilos para el menú en pantallas pequeñas */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+    background-color: var(--header-bg);
+    position: absolute;
+    top: 70px; 
+    right: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  nav ul li {
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  nav ul li a {
+    font-size: 1.2rem;
+  }
+
+  nav.open ul {
+    max-height: 500px; 
+  }
+}
+
 /* Navegación */
 nav ul {
   list-style: none;
@@ -120,7 +167,8 @@ section h2::after {
 
 /* Home y Sobre Mí */
 #home p,
-#about p {
+#about p,
+#contact p {
   font-size: 1.1rem;
   max-width: 800px;
   margin: 0 auto;
@@ -475,105 +523,88 @@ section {
   }
 }
 
-/* Estilos para el carrusel */
-.slick-slider {
-  max-width: 900px;
-  width: 100%;
-  margin: 2rem auto;
-  overflow: hidden;
-}
-
-.slick-slide {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-}
-
-.project {
-  width: 90%;
-  max-width: 500px;
-  padding: 1.5rem;
+/* Estilos para la sección de proyectos */
+#projects {
+  padding: 2rem;
+  margin: 3rem 0;
   background-color: var(--white);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
-  margin: auto;
+}
+
+#projects h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
   text-align: center;
-  min-height: 250px;
 }
 
-.project a {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #020008; /* Color azul */
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+/* Contenedor de la cuadrícula de proyectos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 2rem; 
+  padding: 1rem;
 }
 
-.project a:hover {
-  background-color: #3d0202; /* Azul más oscuro */
-  transform: translateY(-3px);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+/* Estilos para cada tarjeta de proyecto */
+.project-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project a:active {
-  transform: translateY(1px);
-}
-
-
-.slick-slide:hover {
+.project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Flechas de navegación */
-.slick-prev,
-.slick-next {
-  width: 40px;
-  height: 40px;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  z-index: 1;
-  transition: var(--transition);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.slick-prev:hover,
-.slick-next:hover {
-  background-color: var(--accent-color);
-}
-
-.slick-prev::before,
-.slick-next::before {
-  color: var(--white);
-  font-size: 20px;
-  opacity: 1;
-}
-
-.slick-prev {
-  left: -30px;
-}
-
-.slick-next {
-  right: -30px;
-}
-
-/* Puntos de navegación (dots) */
-.slick-dots {
-  bottom: -30px;
-}
-
-.slick-dots li button:before {
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--primary-color);
-  opacity: 0.5;
-  font-size: 12px;
 }
 
-.slick-dots li.slick-active button:before {
-  color: var(--accent-color);
-  opacity: 1;
+.project-card p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
 }
+
+.project-card .project-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.project-card .project-link:hover {
+  background-color: #e5533d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr; 
+  }
+
+  .project-card {
+    padding: 1rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+  }
+}
+
