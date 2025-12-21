@@ -7,9 +7,9 @@ export const projects: Project[] = [
     description: 'Aplicación completa para gestión financiera con reportes estadísticos avanzados',
     longDescription: 'Aplicación completa para gestión de finanzas personales que permite registrar ingresos, gastos, presupuestos, categorías, monedas y medios de pago con reportes estadísticos avanzados. Incluye soporte multi-moneda con conversión automática, análisis de tendencias, autenticación JWT, exportación/importación de datos, testing completo (23 unit tests, 305 E2E tests), CI/CD con GitHub Actions, y contenedorización con Docker.',
     images: [
-      '/images/projects/finanzas-1.jpg',
-      '/images/projects/finanzas-2.jpg',
-      '/images/projects/finanzas-3.jpg'
+      '/images/projects/finanzas-1.png',
+      '/images/projects/finanzas-2.png',
+      '/images/projects/finanzas-3.png'
     ],
     technologies: ['React', 'FastAPI', 'PostgreSQL', 'JWT', 'Docker', 'pytest'],
     category: 'fullstack',
