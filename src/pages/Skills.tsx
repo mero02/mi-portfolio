@@ -161,7 +161,9 @@ const Skills = () => {
                 <item.icon className={`w-5 h-5 mr-2 ${
                   theme === 'dark' ? 'text-red-400' : 'text-blue-600'
                 }`} />
-                <span className="text-sm font-medium">{item.label}</span>
+                <span className={`text-sm font-medium ${
+                  theme === 'dark' ? 'text-red-300' : 'text-white'
+                }`}>{item.label}</span>
               </motion.div>
             ))}
           </div>

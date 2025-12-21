@@ -1,32 +1,45 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
+import { useState } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 const Contact = () => {
   const { t } = useTranslation();
   const { theme } = useTheme();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const schema = yup.object().shape({
-    name: yup.string().required('El nombre es requerido'),
-    email: yup.string().email('Email inválido').required('El email es requerido'),
-    subject: yup.string().required('El asunto es requerido'),
-    message: yup.string().min(10, 'El mensaje debe tener al menos 10 caracteres').required('El mensaje es requerido')
-  });
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  const { register, handleSubmit, formState: { errors }, reset } = useForm({
-    resolver: yupResolver(schema)
-  });
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
-  const onSubmit = (data: any) => {
-    console.log('Form data:', data);
-    // Aquí iría la lógica para enviar el email
-    alert('Mensaje enviado exitosamente!');
-    reset();
+    try {
+      const response = await fetch('https://formspree.io/f/mbldolvb', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        form.reset();
+        setTimeout(() => setIsSubmitted(false), 5000); // Ocultar mensaje después de 5 segundos
+      } else {
+        alert('Error al enviar el mensaje. Inténtalo de nuevo.');
+      }
+    } catch (error) {
+      alert('Error al enviar el mensaje. Inténtalo de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
 
   return (
     <section className="py-20 px-4">
@@ -85,11 +98,13 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium mb-2">Nombre</label>
                 <input
-                  {...register('name')}
+                  type="text"
+                  name="name"
+                  required
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all ${
                     theme === 'dark'
                       ? 'border-red-600/50 focus:ring-red-500 bg-gray-800/50 hover:bg-gray-700/50'
@@ -97,14 +112,14 @@ const Contact = () => {
                   }`}
                   placeholder="Tu nombre"
                 />
-                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
               </div>
 
               <div>
                 <label className="block text-sm font-medium mb-2">Email</label>
                 <input
-                  {...register('email')}
                   type="email"
+                  name="email"
+                  required
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all ${
                     theme === 'dark'
                       ? 'border-red-600/50 focus:ring-red-500 bg-gray-800/50 hover:bg-gray-700/50'
@@ -112,13 +127,14 @@ const Contact = () => {
                   }`}
                   placeholder="tu@email.com"
                 />
-                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
               </div>
 
               <div>
                 <label className="block text-sm font-medium mb-2">Asunto</label>
                 <input
-                  {...register('subject')}
+                  type="text"
+                  name="subject"
+                  required
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all ${
                     theme === 'dark'
                       ? 'border-red-600/50 focus:ring-red-500 bg-gray-800/50 hover:bg-gray-700/50'
@@ -126,14 +142,15 @@ const Contact = () => {
                   }`}
                   placeholder="Asunto del mensaje"
                 />
-                {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>}
               </div>
 
               <div>
                 <label className="block text-sm font-medium mb-2">Mensaje</label>
                 <textarea
-                  {...register('message')}
+                  name="message"
                   rows={5}
+                  required
+                  minLength={10}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all resize-none ${
                     theme === 'dark'
                       ? 'border-red-600/50 focus:ring-red-500 bg-gray-800/50 hover:bg-gray-700/50'
@@ -141,18 +158,48 @@ const Contact = () => {
                   }`}
                   placeholder="Tu mensaje..."
                 />
-                {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
               </div>
 
               <button
                 type="submit"
-                className={`w-full py-3 px-6 rounded-lg transition-colors flex items-center justify-center ${
+                disabled={isSubmitting}
+                className={`w-full py-3 px-6 rounded-lg transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed ${
                   theme === 'dark' ? 'bg-red-600 hover:bg-red-700 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'
                 }`}
               >
-                <Send className="w-5 h-5 mr-2" />
-                Enviar Mensaje
+                {isSubmitting ? (
+                  <>
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                    Enviando...
+                  </>
+                ) : isSubmitted ? (
+                  <>
+                    <Send className="w-5 h-5 mr-2" />
+                    ¡Mensaje Enviado!
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5 mr-2" />
+                    Enviar Mensaje
+                  </>
+                )}
               </button>
+
+              {isSubmitted && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`mt-4 p-4 rounded-lg ${
+                    theme === 'dark' ? 'bg-green-900/20 border border-green-800' : 'bg-green-100 border border-green-200'
+                  }`}
+                >
+                  <p className={`text-sm ${
+                    theme === 'dark' ? 'text-green-300' : 'text-green-700'
+                  }`}>
+                    ¡Gracias por tu mensaje! Te responderé lo antes posible.
+                  </p>
+                </motion.div>
+              )}
             </form>
           </motion.div>
         </div>
