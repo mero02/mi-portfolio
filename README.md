@@ -63,20 +63,34 @@ Un portafolio web moderno y responsivo desarrollado con React y TypeScript, dise
 
 ## Despliegue
 
-### GitHub Pages
+### Vercel (Recomendado)
 
-Este proyecto está configurado para desplegarse en GitHub Pages. Para desplegar:
+Este proyecto está configurado para desplegarse automáticamente en Vercel. Para desplegar:
+
+1. **Conecta tu repositorio de GitHub a Vercel:**
+   - Ve a [vercel.com](https://vercel.com) y crea una cuenta
+   - Importa tu repositorio `mi-portfolio`
+
+2. **Configuración automática:**
+   - **Framework Preset:** Vite
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
+
+3. **Despliegue automático:**
+   - Cada push a la rama `main` activará un despliegue automático
+
+### GitHub Pages (Alternativo)
+
+Si prefieres GitHub Pages, cambia `base: '/'` a `base: '/portfolio/'` en `vite.config.ts` y:
 
 1. **Construye el proyecto:**
    ```bash
    npm run build
    ```
 
-2. **Despliega en GitHub Pages** (si usas GitHub Actions o manualmente):
+2. **Despliega en GitHub Pages:**
    - Sube el contenido de la carpeta `dist` a la rama `gh-pages`
    - O configura GitHub Actions para automatizar el despliegue
-
-El proyecto está configurado con `base: '/portfolio/'` en `vite.config.ts` para desplegarse en `https://tu-usuario.github.io/portfolio/`.
 
 ## Scripts Disponibles
 
@@ -130,6 +144,7 @@ portfolio/
 ├── tailwind.config.js             # Configuración de Tailwind CSS
 ├── tsconfig.json                  # Configuración de TypeScript
 ├── vite.config.ts                 # Configuración de Vite
+├── vercel.json                    # Configuración de despliegue en Vercel
 └── README.md
 ```
 
