@@ -153,7 +153,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                       <span className={`text-sm font-medium ${getStatusColor(project.status)}`}>
                         {getStatusText(project.status)}
                       </span>
-                      <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                      <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
                         <Calendar className="w-4 h-4 mr-1" />
                         {project.year}
                       </div>
@@ -162,7 +162,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                     {/* Description */}
                     <div>
                       <h3 className="text-lg font-semibold mb-2">Descripción</h3>
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                      <p className="text-gray-900 dark:text-gray-500 leading-relaxed">
                         {project.longDescription || project.description}
                       </p>
                     </div>

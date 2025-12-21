@@ -117,7 +117,7 @@ const ProjectCard = memo(({ project, onClick }: ProjectCardProps) => {
 
         {/* Footer */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+          <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
             <Calendar className="w-4 h-4 mr-1" />
             {project.year}
           </div>

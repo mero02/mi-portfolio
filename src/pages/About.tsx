@@ -38,7 +38,7 @@ const About = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('about.title')}</h1>
-          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-900 dark:text-gray-500 max-w-3xl mx-auto">
             {t('about.description')}
           </p>
         </motion.div>
@@ -58,19 +58,19 @@ const About = () => {
                 <MapPin className={`w-6 h-6 mr-2 ${
                   theme === 'dark' ? 'text-red-500' : 'text-blue-600'
                 }`} />
-                <span className="text-gray-700 dark:text-gray-300">Argentina, Chubut</span>
+                <span className="text-gray-900 dark:text-gray-500">Argentina, Chubut</span>
               </div>
               <div className="flex items-center mb-4">
                 <Code className={`w-6 h-6 mr-2 ${
                   theme === 'dark' ? 'text-red-500' : 'text-blue-600'
                 }`} />
-                <span className="text-gray-700 dark:text-gray-300">4+ años de experiencia</span>
+                <span className="text-gray-900 dark:text-gray-500">4+ años de experiencia</span>
               </div>
               <div className="flex items-center">
                 <Briefcase className={`w-6 h-6 mr-2 ${
                   theme === 'dark' ? 'text-red-500' : 'text-blue-600'
                 }`} />
-                <span className="text-gray-700 dark:text-gray-300">Analista de Sistemas</span>
+                <span className="text-gray-900 dark:text-gray-500">Analista de Sistemas</span>
               </div>
             </div>
           </motion.div>
@@ -81,11 +81,11 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="space-y-4"
           >
-            <p className="text-gray-700 dark:text-gray-300">
+            <p className="text-gray-900 dark:text-gray-500">
               Trabajo con FastAPI, Flask, React y bases de datos relacionales.
               Tengo experiencia en proyectos académicos, investigación aplicada y desarrollo personal.
             </p>
-            <p className="text-gray-700 dark:text-gray-300">
+            <p className="text-gray-900 dark:text-gray-500">
               Actualmente curso la Licenciatura en Sistemas Informáticos y busco oportunidades
               para crecer en proyectos de software con impacto real.
             </p>
@@ -126,8 +126,8 @@ const About = () => {
                       theme === 'dark' ? 'text-red-500' : 'text-blue-600'
                     }`}>{exp.year}</span>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300 mb-2">{exp.company}</p>
-                  <p className="text-gray-600 dark:text-gray-400">{exp.description}</p>
+                  <p className="text-gray-900 dark:text-gray-500 mb-2">{exp.company}</p>
+                  <p className="text-gray-700 dark:text-gray-400">{exp.description}</p>
                 </div>
               </motion.div>
             ))}

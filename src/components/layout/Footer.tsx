@@ -62,7 +62,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className={`text-center ${
-            theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+            theme === 'dark' ? 'text-gray-400' : 'text-gray-700'
           }`}>
             <p className="text-sm">{t('footer.copyright')}</p>
           </div>

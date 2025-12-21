@@ -51,7 +51,7 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('contact.title')}</h1>
-          <p className="text-xl text-gray-700 dark:text-gray-300">
+          <p className="text-xl text-gray-900 dark:text-gray-500">
             {t('contact.description')}
           </p>
         </motion.div>
@@ -69,7 +69,7 @@ const Contact = () => {
                 }`} />
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-gray-700 dark:text-gray-300">mero2sp@gmail.com</p>
+                  <p className="text-gray-900 dark:text-gray-500">mero2sp@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center">
@@ -78,7 +78,7 @@ const Contact = () => {
                 }`} />
                 <div>
                   <h3 className="font-semibold">Teléfono</h3>
-                  <p className="text-gray-700 dark:text-gray-300">+5492804645445</p>
+                  <p className="text-gray-900 dark:text-gray-500">+5492804645445</p>
                 </div>
               </div>
               <div className="flex items-center">
@@ -87,7 +87,7 @@ const Contact = () => {
                 }`} />
                 <div>
                   <h3 className="font-semibold">Ubicación</h3>
-                  <p className="text-gray-700 dark:text-gray-300">Argentina, Chubut</p>
+                  <p className="text-gray-900 dark:text-gray-500">Argentina, Chubut</p>
                 </div>
               </div>
             </div>

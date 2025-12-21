@@ -84,7 +84,7 @@ const Header = () => {
                     ? theme === 'dark'
                       ? 'bg-red-600 text-white shadow-sm'
                       : 'bg-blue-600 text-white shadow-sm'
-                    : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
+                    : 'text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
                 }`}
               >
                 ES
@@ -96,7 +96,7 @@ const Header = () => {
                     ? theme === 'dark'
                       ? 'bg-red-600 text-white shadow-sm'
                       : 'bg-blue-600 text-white shadow-sm'
-                    : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
+                    : 'text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
                 }`}
               >
                 EN
@@ -159,7 +159,7 @@ const Header = () => {
                       ? theme === 'dark'
                         ? 'bg-red-600 text-white'
                         : 'bg-blue-600 text-white'
-                      : 'text-gray-600 dark:text-gray-400'
+                      : 'text-gray-700 dark:text-gray-400'
                   }`}
                 >
                   ES
@@ -171,7 +171,7 @@ const Header = () => {
                       ? theme === 'dark'
                         ? 'bg-red-600 text-white'
                         : 'bg-blue-600 text-white'
-                      : 'text-gray-600 dark:text-gray-400'
+                      : 'text-gray-700 dark:text-gray-400'
                   }`}
                 >
                   EN

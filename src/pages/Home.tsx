@@ -25,7 +25,7 @@ const Home = () => {
           Mauro G. San Pedro
         </motion.h1>
         <motion.p
-          className="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-300"
+          className="text-xl md:text-2xl mb-8 text-gray-900 dark:text-gray-500"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -60,7 +60,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          <p className="text-lg text-gray-900 dark:text-gray-500 leading-relaxed">
             Trabajo con FastAPI, Flask, React y bases de datos relacionales.
             Tengo experiencia en proyectos académicos, investigación aplicada y desarrollo personal.
             Actualmente curso la Licenciatura en Sistemas Informáticos y busco oportunidades
@@ -83,7 +83,7 @@ const Home = () => {
               }`} />
             </div>
             <div className="text-2xl font-bold mb-1">4+</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Años de Experiencia</div>
+            <div className="text-sm text-gray-700 dark:text-gray-400">Años de Experiencia</div>
           </div>
 
           <div className="text-center">
@@ -95,7 +95,7 @@ const Home = () => {
               }`} />
             </div>
             <div className="text-2xl font-bold mb-1">6</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Proyectos Completados</div>
+            <div className="text-sm text-gray-700 dark:text-gray-400">Proyectos Completados</div>
           </div>
 
           <div className="text-center">
@@ -107,7 +107,7 @@ const Home = () => {
               }`} />
             </div>
             <div className="text-2xl font-bold mb-1">15+</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Tecnologías</div>
+            <div className="text-sm text-gray-700 dark:text-gray-400">Tecnologías</div>
           </div>
 
           <div className="text-center">
@@ -119,7 +119,7 @@ const Home = () => {
               }`} />
             </div>
             <div className="text-2xl font-bold mb-1">1</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Beca de Investigación</div>
+            <div className="text-sm text-gray-700 dark:text-gray-400">Beca de Investigación</div>
           </div>
         </motion.div>
       </motion.div>

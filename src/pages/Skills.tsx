@@ -117,7 +117,7 @@ const Skills = () => {
                   >
                     <div className="flex justify-between items-center mb-1">
                       <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-sm text-gray-500">{skill.level}%</span>
+                      <span className="text-sm text-gray-600">{skill.level}%</span>
                     </div>
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                       <motion.div
