@@ -63,11 +63,13 @@ const ProjectCard = memo(({ project, onClick }: ProjectCardProps) => {
       )}
 
       {/* Image */}
-      <div className="relative h-48 overflow-hidden">
+      <div className={`relative h-48 overflow-hidden ${
+        theme === 'dark' ? 'bg-gray-800' : 'bg-gray-100'
+      }`}>
         <img
           src={project.images[0] || '/images/placeholder.jpg'}
           alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-full max-h-full object-contain"
           loading="lazy"
         />
         <div className={`absolute inset-0 bg-gradient-to-t ${

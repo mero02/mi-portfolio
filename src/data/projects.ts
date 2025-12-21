@@ -57,8 +57,7 @@ export const projects: Project[] = [
     longDescription: 'Aplicación web que implementa un juego de ruleta interactiva con dos modos de juego: Clásico (verdadero/falso) y Autoevaluación. Diseñada para eventos o clases donde se pueden cargar preguntas desde archivos CSV y jugar girando una ruleta para seleccionar preguntas al azar. Incluye interfaz intuitiva y soporte para múltiples categorías.',
     images: [
       '/images/projects/ruleta-1.png',
-      '/images/projects/ruleta-2.png',
-      '/images/projects/ruleta-3.png'
+      '/images/projects/ruleta-2.png'
     ],
     technologies: ['React', 'JavaScript', 'CSS', 'HTML5 Canvas', 'FastAPI'],
     category: 'fullstack',
@@ -192,8 +191,7 @@ export const projectCategories = [
   { value: 'all', label: 'Todos' },
   { value: 'frontend', label: 'Frontend' },
   { value: 'backend', label: 'Backend' },
-  { value: 'fullstack', label: 'Full Stack' },
-  { value: 'mobile', label: 'Mobile' }
+  { value: 'fullstack', label: 'Full Stack' }
 ];
 
 export const technologies = [

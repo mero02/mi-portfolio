@@ -125,11 +125,13 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                       className="h-full"
                     >
                       {project.images.map((image, index) => (
-                        <SwiperSlide key={index}>
+                        <SwiperSlide key={index} className={`relative ${
+                          theme === 'dark' ? 'bg-black/90' : 'bg-white'
+                        }`}>
                           <img
                             src={image}
                             alt={`${project.title} - ${index + 1}`}
-                            className="w-full h-full object-cover"
+                            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-full max-h-full object-contain"
                           />
                         </SwiperSlide>
                       ))}
