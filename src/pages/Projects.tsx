@@ -59,14 +59,14 @@ const Projects = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className={`w-full px-4 py-3 pl-12 rounded-lg border transition-all ${
                   theme === 'dark'
-                    ? 'border-red-600/50 bg-gray-800/50 hover:bg-gray-700/50 focus:ring-red-500 focus:border-red-500'
+                    ? 'border-red-600/50 bg-red-800/50 hover:bg-redw-700/50 focus:ring-red-500 focus:border-red-500'
                     : 'border-blue-300/50 bg-white hover:bg-blue-50/30 focus:ring-blue-500 focus:border-blue-500'
                 }`}
               />
               <div className={`absolute left-4 top-1/2 transform -translate-y-1/2 ${
                 theme === 'dark' ? 'text-red-400' : 'text-blue-500'
               }`}>
-                🔍
+                
               </div>
             </div>
 

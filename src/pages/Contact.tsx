@@ -107,7 +107,7 @@ const Contact = () => {
                   required
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all ${
                     theme === 'dark'
-                      ? 'border-red-600/50 focus:ring-red-500 bg-gray-800/50 hover:bg-gray-700/50'
+                      ? 'border-red-600/50 focus:ring-red-500 bg-red-800/50 hover:bg-reda-700/50'
                       : 'border-blue-300/50 focus:ring-blue-500 bg-white hover:bg-blue-50/30'
                   }`}
                   placeholder="Tu nombre"
@@ -122,7 +122,7 @@ const Contact = () => {
                   required
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all ${
                     theme === 'dark'
-                      ? 'border-red-600/50 focus:ring-red-500 bg-gray-800/50 hover:bg-gray-700/50'
+                      ? 'border-red-600/50 focus:ring-red-500 bg-red-800/50 hover:bg-red-700/50'
                       : 'border-blue-300/50 focus:ring-blue-500 bg-white hover:bg-blue-50/30'
                   }`}
                   placeholder="tu@email.com"
@@ -137,7 +137,7 @@ const Contact = () => {
                   required
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all ${
                     theme === 'dark'
-                      ? 'border-red-600/50 focus:ring-red-500 bg-gray-800/50 hover:bg-gray-700/50'
+                      ? 'border-red-600/50 focus:ring-red-500 bg-red-800/50 hover:bg-red-700/50'
                       : 'border-blue-300/50 focus:ring-blue-500 bg-white hover:bg-blue-50/30'
                   }`}
                   placeholder="Asunto del mensaje"
@@ -153,7 +153,7 @@ const Contact = () => {
                   minLength={10}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all resize-none ${
                     theme === 'dark'
-                      ? 'border-red-600/50 focus:ring-red-500 bg-gray-800/50 hover:bg-gray-700/50'
+                      ? 'border-red-600/50 focus:ring-red-500 bg-red-800/50 hover:bg-red-700/50'
                       : 'border-blue-300/50 focus:ring-blue-500 bg-white hover:bg-blue-50/30'
                   }`}
                   placeholder="Tu mensaje..."

@@ -84,11 +84,11 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
             className="fixed inset-4 md:inset-8 lg:inset-16 z-50 overflow-hidden"
           >
             <div className={`w-full h-full rounded-lg shadow-2xl overflow-hidden ${
-              theme === 'dark' ? 'bg-gray-900' : 'bg-white'
+              theme === 'dark' ? 'bg-black/90 border border-red-800/30' : 'bg-white'
             }`}>
               {/* Header */}
               <div className={`flex items-center justify-between p-6 border-b ${
-                theme === 'dark' ? 'border-gray-700' : 'border-gray-200'
+                theme === 'dark' ? 'border-red-800/30' : 'border-gray-200'
               }`}>
                 <div className="flex items-center gap-3">
                   <h2 className="text-2xl font-bold">{project.title}</h2>
@@ -187,41 +187,43 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                     </div>
 
                     {/* Links */}
-                    <div>
-                      <h3 className="text-lg font-semibold mb-3">Enlaces</h3>
-                      <div className="flex gap-4">
-                        {project.repository && (
-                          <a
-                            href={project.repository}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-                              theme === 'dark'
-                                ? 'bg-red-900/20 border border-red-800/50 text-red-400 hover:bg-red-900/30'
-                                : 'bg-blue-50 border border-blue-200 text-blue-600 hover:bg-blue-100'
-                            }`}
-                          >
-                            <Github className="w-4 h-4" />
-                            Código
-                          </a>
-                        )}
-                        {project.demo && (
-                          <a
-                            href={project.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-                              theme === 'dark'
-                                ? 'bg-red-900/20 border border-red-800/50 text-red-400 hover:bg-red-900/30'
-                                : 'bg-blue-50 border border-blue-200 text-blue-600 hover:bg-blue-100'
-                            }`}
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                            Demo
-                          </a>
-                        )}
+                    {(project.repository || project.demo) && (
+                      <div>
+                        <h3 className="text-lg font-semibold mb-3">Enlaces</h3>
+                        <div className="flex gap-4">
+                          {project.repository && (
+                            <a
+                              href={project.repository}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+                                theme === 'dark'
+                                  ? 'bg-red-900/20 border border-red-800/50 text-red-400 hover:bg-red-900/30'
+                                  : 'bg-blue-50 border border-blue-200 text-blue-600 hover:bg-blue-100'
+                              }`}
+                            >
+                              <Github className="w-4 h-4" />
+                              Código
+                            </a>
+                          )}
+                          {project.demo && (
+                            <a
+                              href={project.demo}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+                                theme === 'dark'
+                                  ? 'bg-red-900/20 border border-red-800/50 text-red-400 hover:bg-red-900/30'
+                                  : 'bg-blue-50 border border-blue-200 text-blue-600 hover:bg-blue-100'
+                              }`}
+                            >
+                              <ExternalLink className="w-4 h-4" />
+                              Demo
+                            </a>
+                          )}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>
