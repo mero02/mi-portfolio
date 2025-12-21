@@ -70,7 +70,7 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('skills.title')}</h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-xl text-gray-700 dark:text-gray-300">
             {t('skills.description')}
           </p>
         </motion.div>

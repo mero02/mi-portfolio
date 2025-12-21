@@ -162,7 +162,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                     {/* Description */}
                     <div>
                       <h3 className="text-lg font-semibold mb-2">Descripción</h3>
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                         {project.longDescription || project.description}
                       </p>
                     </div>

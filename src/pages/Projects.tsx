@@ -37,7 +37,7 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('projects.title')}</h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             {t('projects.description')}
           </p>
         </motion.div>
@@ -125,7 +125,7 @@ const Projects = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mb-8 text-center"
         >
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-gray-700 dark:text-gray-300">
             {filteredProjects.length} proyecto{filteredProjects.length !== 1 ? 's' : ''} encontrado{filteredProjects.length !== 1 ? 's' : ''}
           </p>
         </motion.div>
@@ -169,7 +169,7 @@ const Projects = () => {
           >
             <div className="text-6xl mb-4">🔍</div>
             <h3 className="text-2xl font-bold mb-2">No se encontraron proyectos</h3>
-            <p className="text-gray-600 dark:text-gray-300">
+            <p className="text-gray-700 dark:text-gray-300">
               Intenta ajustar los filtros de búsqueda
             </p>
           </motion.div>

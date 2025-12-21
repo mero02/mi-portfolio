@@ -86,7 +86,7 @@ const ProjectCard = memo(({ project, onClick }: ProjectCardProps) => {
           </span>
         </div>
 
-        <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
+        <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">
           {project.description}
         </p>
 
