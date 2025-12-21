@@ -94,7 +94,7 @@ const Home = () => {
                 theme === 'dark' ? 'text-red-400' : 'text-blue-600'
               }`} />
             </div>
-            <div className="text-2xl font-bold mb-1">6</div>
+            <div className="text-2xl font-bold mb-1">10+</div>
             <div className="text-sm text-gray-700 dark:text-gray-400">Proyectos Completados</div>
           </div>
 

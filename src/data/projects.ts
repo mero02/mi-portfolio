@@ -40,7 +40,8 @@ export const projects: Project[] = [
     longDescription: 'Proyecto universitario desarrollado en equipo interdisciplinario para la materia Desarrollo de Software. Diseñé y desarrollé un sistema utilizando FastAPI (backend) y React (frontend) para visualización de datos ambientales. Implementé una API REST para automatización de alertas críticas a través de un bot de Telegram.',
     images: [
       '/images/projects/ambiental-1.png',
-      '/images/projects/ambiental-2.png'
+      '/images/projects/ambiental-2.png',
+      '/images/projects/ambiental-3.png'
     ],
     technologies: ['React', 'FastAPI', 'Telegram Bot API', 'SQLite'],
     category: 'fullstack',
@@ -56,7 +57,8 @@ export const projects: Project[] = [
     longDescription: 'Aplicación web que implementa un juego de ruleta interactiva con dos modos de juego: Clásico (verdadero/falso) y Autoevaluación. Diseñada para eventos o clases donde se pueden cargar preguntas desde archivos CSV y jugar girando una ruleta para seleccionar preguntas al azar. Incluye interfaz intuitiva y soporte para múltiples categorías.',
     images: [
       '/images/projects/ruleta-1.png',
-      '/images/projects/ruleta-2.png'
+      '/images/projects/ruleta-2.png',
+      '/images/projects/ruleta-3.png'
     ],
     technologies: ['React', 'JavaScript', 'CSS', 'HTML5 Canvas', 'FastAPI'],
     category: 'fullstack',
@@ -72,7 +74,8 @@ export const projects: Project[] = [
     longDescription: 'Proyecto colaborativo para gestión integral de un restobar, incluyendo módulos para inventario, pedidos, mesas, empleados y reportes financieros. Desarrollado con enfoque en usabilidad y eficiencia operativa, implementando las mejores prácticas de desarrollo en equipo.',
     images: [
       '/images/projects/restobar-1.png',
-      '/images/projects/restobar-2.png'
+      '/images/projects/restobar-2.png',
+      '/images/projects/restobar-3.png'
     ],
     technologies: ['React', 'Node.js', 'PostgreSQL', 'Express', 'Docker'],
     category: 'fullstack',
@@ -139,7 +142,8 @@ export const projects: Project[] = [
     longDescription: 'Aplicación web desarrollada que permite extraer y validar patentes de vehículos a partir de texto de entrada, siguiendo los formatos oficiales de Argentina (ABC-1234 con guión y XYZ 567 sin guión). Utiliza expresiones regulares para identificar y validar las patentes encontradas en el texto proporcionado por el usuario.',
     images: [
       '/images/projects/patentes-1.png',
-      '/images/projects/patentes-2.png'
+      '/images/projects/patentes-2.png',
+      '/images/projects/patentes-3.png'
     ],
     technologies: ['React', 'JavaScript', 'Regex', 'CSS'],
     category: 'frontend',
@@ -171,7 +175,9 @@ export const projects: Project[] = [
     longDescription: 'Proyecto que implementa algoritmos para generar curvas fractales utilizando sistemas de Lindenmayer (L-systems). Incluye la implementación de Dragon Curve (ángulo 90°, reglas X→X+YF+, Y→−FX−Y) y Hilbert Curve (ángulo 90°, reglas más complejas), con visualización gráfica en canvas HTML5. Demuestra conceptos de geometría fractal y algoritmos recursivos.',
     images: [
       '/images/projects/curvas-1.png',
-      '/images/projects/curvas-2.png'
+      '/images/projects/curvas-2.png',
+      '/images/projects/curvas-3.png',
+      '/images/projects/curvas-4.png'
     ],
     technologies: ['JavaScript', 'HTML5 Canvas', 'CSS', 'L-systems', 'Fractal Geometry'],
     category: 'frontend',
