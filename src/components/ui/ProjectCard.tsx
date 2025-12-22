@@ -1,5 +1,6 @@
 import { memo, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Project } from '../../types';
 import { useTheme } from '../../contexts/ThemeContext';
 import { ExternalLink, Github, Calendar, Star } from 'lucide-react';
@@ -10,6 +11,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = memo(({ project, onClick }: ProjectCardProps) => {
+  const { t } = useTranslation();
   const { theme } = useTheme();
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -27,16 +29,7 @@ const ProjectCard = memo(({ project, onClick }: ProjectCardProps) => {
   };
 
   const getStatusText = (status: Project['status']) => {
-    switch (status) {
-      case 'completed':
-        return 'Completado';
-      case 'in-progress':
-        return 'En progreso';
-      case 'planned':
-        return 'Planificado';
-      default:
-        return status;
-    }
+    return t(`projects.filters.statusOptions.${status}`);
   };
 
   return (
@@ -59,7 +52,7 @@ const ProjectCard = memo(({ project, onClick }: ProjectCardProps) => {
           theme === 'dark' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-yellow-100 text-yellow-700'
         }`}>
           <Star className="w-3 h-3" />
-          Destacado
+          {t('projects.ui.featured')}
         </div>
       )}
 
@@ -138,6 +131,7 @@ const ProjectCard = memo(({ project, onClick }: ProjectCardProps) => {
                 href={project.repository}
                 target="_blank"
                 rel="noopener noreferrer"
+                title={t('projects.ui.repository')}
                 className={`p-2 rounded-full transition-colors ${
                   theme === 'dark'
                     ? 'hover:bg-red-900/30 text-red-400'
@@ -153,6 +147,7 @@ const ProjectCard = memo(({ project, onClick }: ProjectCardProps) => {
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
+                title={t('projects.ui.demo')}
                 className={`p-2 rounded-full transition-colors ${
                   theme === 'dark'
                     ? 'hover:bg-red-900/30 text-red-400'

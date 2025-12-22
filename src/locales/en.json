@@ -24,11 +24,53 @@
   },
   "skills": {
     "title": "My Skills",
-    "description": "Technologies I work with"
+    "description": "Technologies I work with",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "databases": "Databases",
+      "tools": "Tools"
+    },
+    "competencies": {
+      "requirementsAnalysis": "Requirements Analysis",
+      "apiDesign": "API Design",
+      "problemSolving": "Problem Solving",
+      "teamwork": "Teamwork"
+    }
   },
   "projects": {
     "title": "My Projects",
-    "description": "Some of my recent work"
+    "description": "Some of my recent work",
+    "filters": {
+      "searchPlaceholder": "Search projects...",
+      "filters": "Filters",
+      "advancedFilters": "Advanced Filters",
+      "technologies": "Technologies",
+      "status": "Status",
+      "year": "Year",
+      "all": "All",
+      "clearFilters": "Clear filters",
+      "results_one": "project found",
+      "results_other": "projects found",
+      "noResults": "No projects found",
+      "tryAdjusting": "Try adjusting the search filters",
+      "statusOptions": {
+        "completed": "Completed",
+        "in-progress": "In Progress",
+        "planned": "Planned"
+      }
+    },
+    "ui": {
+      "featured": "Featured",
+      "viewDetails": "View Details",
+      "repository": "Code",
+      "demo": "Demo",
+      "technologies": "Technologies",
+      "description": "Description",
+      "links": "Links",
+      "year": "Year",
+      "status": "Status"
+    }
   },
   "contact": {
     "title": "Contact Me",

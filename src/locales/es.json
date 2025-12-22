@@ -24,11 +24,53 @@
   },
   "skills": {
     "title": "Mis Habilidades",
-    "description": "Tecnologías con las que trabajo"
+    "description": "Tecnologías con las que trabajo",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "databases": "Bases de Datos",
+      "tools": "Herramientas"
+    },
+    "competencies": {
+      "requirementsAnalysis": "Análisis de Requisitos",
+      "apiDesign": "Diseño de APIs",
+      "problemSolving": "Resolución de Problemas",
+      "teamwork": "Trabajo en Equipo"
+    }
   },
   "projects": {
     "title": "Mis Proyectos",
-    "description": "Algunos de mis trabajos recientes"
+    "description": "Algunos de mis trabajos recientes",
+    "filters": {
+      "searchPlaceholder": "Buscar proyectos...",
+      "filters": "Filtros",
+      "advancedFilters": "Filtros Avanzados",
+      "technologies": "Tecnologías",
+      "status": "Estado",
+      "year": "Año",
+      "all": "Todos",
+      "clearFilters": "Limpiar filtros",
+      "results_one": "proyecto encontrado",
+      "results_other": "proyectos encontrados",
+      "noResults": "No se encontraron proyectos",
+      "tryAdjusting": "Intenta ajustar los filtros de búsqueda",
+      "statusOptions": {
+        "completed": "Completado",
+        "in-progress": "En progreso",
+        "planned": "Planificado"
+      }
+    },
+    "ui": {
+      "featured": "Destacado",
+      "viewDetails": "Ver Detalles",
+      "repository": "Código",
+      "demo": "Demo",
+      "technologies": "Tecnologías",
+      "description": "Descripción",
+      "links": "Enlaces",
+      "year": "Año",
+      "status": "Estado"
+    }
   },
   "contact": {
     "title": "Contáctame",

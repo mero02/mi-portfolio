@@ -44,6 +44,10 @@ const Projects = () => {
     });
   }, [selectedCategory, searchTerm, selectedTechnologies, selectedStatus, selectedYear]);
 
+  const getStatusText = (status: string) => {
+    return t(`projects.filters.statusOptions.${status}`);
+  };
+
   return (
     <section className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -71,12 +75,12 @@ const Projects = () => {
             <div className="relative flex-1 max-w-md">
               <input
                 type="text"
-                placeholder="Buscar proyectos..."
+                placeholder={t('projects.filters.searchPlaceholder')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className={`w-full px-4 py-3 pl-12 rounded-lg border transition-all ${
                   theme === 'dark'
-                    ? 'border-red-600/50 bg-red-800/50 hover:bg-redw-700/50 focus:ring-red-500 focus:border-red-500'
+                    ? 'border-red-600/50 bg-red-800/50 hover:bg-red-700/50 focus:ring-red-500 focus:border-red-500'
                     : 'border-blue-300/50 bg-white hover:bg-blue-50/30 focus:ring-blue-500 focus:border-blue-500'
                 }`}
               />
@@ -97,7 +101,7 @@ const Projects = () => {
               }`}
             >
               <Filter className="w-4 h-4" />
-              Filtros
+              {t('projects.filters.filters')}
             </button>
           </div>
 
@@ -137,11 +141,11 @@ const Projects = () => {
                     ? 'border-red-800/30 bg-red-900/5'
                     : 'border-blue-200/30 bg-blue-50/30'
                 }`}>
-                  <h3 className="text-lg font-semibold mb-4">Filtros Avanzados</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t('projects.filters.advancedFilters')}</h3>
                   <div className="space-y-4">
                     {/* Technologies */}
                     <div>
-                      <h4 className="text-sm font-medium mb-2">Tecnologías</h4>
+                      <h4 className="text-sm font-medium mb-2">{t('projects.filters.technologies')}</h4>
                       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
                         {technologies.slice(0, 10).map((tech) => (
                           <label key={tech} className="flex items-center gap-2 cursor-pointer text-sm">
@@ -168,7 +172,7 @@ const Projects = () => {
                     {/* Status and Year */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium mb-1">Estado</label>
+                        <label className="block text-sm font-medium mb-1">{t('projects.filters.status')}</label>
                         <select
                           value={selectedStatus}
                           onChange={(e) => setSelectedStatus(e.target.value)}
@@ -178,18 +182,17 @@ const Projects = () => {
                               : 'border-blue-300/50 bg-white'
                           }`}
                         >
-                          <option value="all">Todos</option>
+                          <option value="all">{t('projects.filters.all')}</option>
                           {uniqueStatuses.map((status) => (
                             <option key={status} value={status}>
-                              {status === 'completed' ? 'Completado' :
-                               status === 'in-progress' ? 'En progreso' : 'Planificado'}
+                              {getStatusText(status)}
                             </option>
                           ))}
                         </select>
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium mb-1">Año</label>
+                        <label className="block text-sm font-medium mb-1">{t('projects.filters.year')}</label>
                         <select
                           value={selectedYear}
                           onChange={(e) => setSelectedYear(e.target.value)}
@@ -199,7 +202,7 @@ const Projects = () => {
                               : 'border-blue-300/50 bg-white'
                           }`}
                         >
-                          <option value="all">Todos</option>
+                          <option value="all">{t('projects.filters.all')}</option>
                           {uniqueYears.map((year) => (
                             <option key={year} value={year}>{year}</option>
                           ))}
@@ -223,7 +226,7 @@ const Projects = () => {
                             : 'bg-blue-600 hover:bg-blue-700 text-white'
                         }`}
                       >
-                        Limpiar filtros
+                        {t('projects.filters.clearFilters')}
                       </button>
                     </div>
                   </div>
@@ -241,7 +244,7 @@ const Projects = () => {
           className="mb-8 text-center"
         >
           <p className="text-gray-900 dark:text-gray-500">
-            {filteredProjects.length} proyecto{filteredProjects.length !== 1 ? 's' : ''} encontrado{filteredProjects.length !== 1 ? 's' : ''}
+            {t('projects.filters.results', { count: filteredProjects.length })}
           </p>
         </motion.div>
 
@@ -283,9 +286,9 @@ const Projects = () => {
             className="text-center py-16"
           >
             <div className="text-6xl mb-4">🔍</div>
-            <h3 className="text-2xl font-bold mb-2">No se encontraron proyectos</h3>
+            <h3 className="text-2xl font-bold mb-2">{t('projects.filters.noResults')}</h3>
             <p className="text-gray-900 dark:text-gray-500">
-              Intenta ajustar los filtros de búsqueda
+              {t('projects.filters.tryAdjusting')}
             </p>
           </motion.div>
         )}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Project } from '../../types';
@@ -19,6 +20,7 @@ interface ProjectModalProps {
 }
 
 const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
+  const { t } = useTranslation();
   const { theme } = useTheme();
   const [zoom, setZoom] = useState(1);
   const [pan, setPan] = useState({ x: 0, y: 0 });
@@ -56,16 +58,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
   };
 
   const getStatusText = (status: Project['status']) => {
-    switch (status) {
-      case 'completed':
-        return 'Completado';
-      case 'in-progress':
-        return 'En progreso';
-      case 'planned':
-        return 'Planificado';
-      default:
-        return status;
-    }
+    return t(`projects.filters.statusOptions.${status}`);
   };
 
   return (
@@ -104,7 +97,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                       theme === 'dark' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-yellow-100 text-yellow-700'
                     }`}>
                       <Star className="w-3 h-3" />
-                      Destacado
+                      {t('projects.ui.featured')}
                     </div>
                   )}
                 </div>
@@ -218,7 +211,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
 
                     {/* Description */}
                     <div>
-                      <h3 className="text-lg font-semibold mb-2">Descripción</h3>
+                      <h3 className="text-lg font-semibold mb-2">{t('projects.ui.description')}</h3>
                       <p className="text-gray-900 dark:text-gray-500 leading-relaxed">
                         {project.longDescription || project.description}
                       </p>
@@ -226,7 +219,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
 
                     {/* Technologies */}
                     <div>
-                      <h3 className="text-lg font-semibold mb-3">Tecnologías</h3>
+                      <h3 className="text-lg font-semibold mb-3">{t('projects.ui.technologies')}</h3>
                       <div className="flex flex-wrap gap-2">
                         {project.technologies.map((tech) => (
                           <span
@@ -246,7 +239,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                     {/* Links */}
                     {(project.repository || project.demo) && (
                       <div>
-                        <h3 className="text-lg font-semibold mb-3">Enlaces</h3>
+                        <h3 className="text-lg font-semibold mb-3">{t('projects.ui.links')}</h3>
                         <div className="flex gap-4">
                           {project.repository && (
                             <a
@@ -260,7 +253,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                               }`}
                             >
                               <Github className="w-4 h-4" />
-                              Código
+                              {t('projects.ui.repository')}
                             </a>
                           )}
                           {project.demo && (
@@ -275,7 +268,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                               }`}
                             >
                               <ExternalLink className="w-4 h-4" />
-                              Demo
+                              {t('projects.ui.demo')}
                             </a>
                           )}
                         </div>
