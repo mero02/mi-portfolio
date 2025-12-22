@@ -78,7 +78,7 @@ const About = () => {
             `}
           >
             <Download size={20} />
-            {t('downloadCV', 'Descargar CV')}
+            {t('about.downloadCV')}
           </a>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
             PDF • Actualizado recientemente

@@ -2,12 +2,20 @@ import { motion } from 'framer-motion';
 import { ChevronDown, Calendar, Briefcase, Code, Award } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Home = () => {
   const { theme } = useTheme();
 
   return (
-    <section className="min-h-screen flex flex-col items-center text-center px-4 py-20">
+    <>
+      <SEO 
+        title="Bienvenido a mi Portafolio"
+        description="Descubre mi trabajo como Analista de Sistemas y Desarrollador Full Stack. Especializado en React, FastAPI, Python y tecnologías modernas para crear soluciones de software de calidad."
+        keywords="portfolio desarrollador, react, fastapi, python, full stack, analista sistemas, desarrollo web"
+        type="website"
+      />
+      <section className="min-h-screen flex flex-col items-center text-center px-4 py-20">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -142,6 +150,7 @@ const Home = () => {
         } animate-pulse animation-delay-2000`}></div>
       </div>
     </section>
+    </>
   );
 };
 
