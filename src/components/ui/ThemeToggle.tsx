@@ -8,8 +8,8 @@ const ThemeToggle = () => {
       onClick={toggleTheme}
       className={`px-3 py-1 rounded transition-colors ${
         theme === 'dark'
-          ? 'bg-dark-accent text-white'
-          : 'bg-light-accent text-white'
+          ? 'bg-red-600 hover:bg-red-700 text-white'
+          : 'bg-blue-600 hover:bg-blue-700 text-white'
       }`}
     >
       {theme === 'dark' ? '☀️' : '🌙'}
