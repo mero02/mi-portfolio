@@ -10,6 +10,12 @@ const About = () => {
   const experiences = [
     {
       year: '2025',
+      title: 'Taller experimental sobre herramientas de desarrollo frontend',
+      company: 'Universidad Nacional de la Patagonia San Juan Bosco',
+      description: 'Participé en un taller experimental probando una herramienta de desarrollo frontend construida por profesores universitarios, proporcionando feedback sobre la experiencia de uso.'
+    },
+    {
+      year: '2025',
       title: 'Becario en Investigación y Desarrollo',
       company: 'Universidad Nacional de la Patagonia San Juan Bosco',
       description: 'Participé en proyectos de inteligencia artificial y análisis de datos en colaboración con el Banco del Chubut. Trabajé en entrenamiento y evaluación de modelos de lenguaje (LLM), segmentación y procesamiento de documentos, automatización de pruebas y desarrollo de herramientas en Google Colab.'

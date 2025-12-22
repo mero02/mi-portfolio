@@ -14,7 +14,7 @@ export const projects: Project[] = [
     technologies: ['React', 'FastAPI', 'PostgreSQL', 'JWT', 'Docker', 'pytest'],
     category: 'fullstack',
     featured: true,
-    year: 2024,
+    year: 2025,
     status: 'in-progress'
   },
   {
@@ -30,7 +30,7 @@ export const projects: Project[] = [
     technologies: ['React', 'FastAPI', 'Docker', 'PostgreSQL', 'JWT'],
     category: 'fullstack',
     featured: true,
-    year: 2024,
+    year: 2025,
     status: 'completed'
   },
   {
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     category: 'fullstack',
     repository: 'https://github.com/mero02/rulestudio',
     featured: false,
-    year: 2024,
+    year: 2025,
     status: 'in-progress'
   },
     {
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     category: 'fullstack',
     repository: 'https://github.com/Bikutah/ingenieria-3-grupo-2',
     featured: false,
-    year: 2023,
+    year: 2025,
     status: 'completed'
   },
   {
@@ -98,7 +98,7 @@ export const projects: Project[] = [
     category: 'fullstack',
     repository: 'https://github.com/mero02/app-tienda',
     featured: false,
-    year: 2024,
+    year: 2025,
     status: 'in-progress'
   },
   {
@@ -114,7 +114,7 @@ export const projects: Project[] = [
     category: 'fullstack',
     repository: 'https://github.com/mero02/proyecto-s3-local',
     featured: false,
-    year: 2024,
+    year: 2025,
     status: 'completed'
   },
   {
@@ -131,7 +131,7 @@ export const projects: Project[] = [
     category: 'fullstack',
     repository: 'https://github.com/mero02/laboratorio',
     featured: false,
-    year: 2024,
+    year: 2025,
     status: 'completed'
   },
   {
@@ -182,7 +182,7 @@ export const projects: Project[] = [
     category: 'frontend',
     repository: 'https://github.com/ilugr/FTI_Curvas',
     featured: false,
-    year: 2023,
+    year: 2024,
     status: 'completed'
   }
 ];
