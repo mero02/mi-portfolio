@@ -139,7 +139,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold text-center mb-12">Experiencia Profesional</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t('about.experienceTitle')}</h2>
           <div className="relative">
             <div className={`absolute left-8 top-0 bottom-0 w-0.5 ${
               theme === 'dark' ? 'bg-red-600' : 'bg-blue-600'

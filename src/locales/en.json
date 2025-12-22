@@ -13,7 +13,14 @@
   "about": {
     "title": "About Me",
     "description": "Systems Analyst and Software Developer with experience in frontend and backend development, REST API design and building systems oriented to solving real problems. I work with FastAPI, Flask, React and relational databases (SQLite, PostgreSQL). I have experience in academic projects, applied research and personal development, including containers with Docker, distributed systems, observability and process automation. I am currently studying for a Bachelor's degree in Computer Systems and looking for opportunities to continue growing in software projects with real impact.",
-    "downloadCV": "Download CV"
+    "downloadCV": "Download CV",
+    "experienceTitle": "Professional Experience"
+  },
+  "aboutPage": {
+    "professionalExperience": "Professional Experience",
+    "location": "Argentina, Chubut",
+    "experience": "4+ years of experience",
+    "role": "Systems Analyst"
   },
   "skills": {
     "title": "My Skills",
@@ -25,7 +32,42 @@
   },
   "contact": {
     "title": "Contact Me",
-    "description": "Get in touch"
+    "description": "Get in touch",
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "emailValue": "mero2sp@gmail.com",
+      "phoneValue": "+5492804645445",
+      "locationValue": "Argentina, Chubut"
+    },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "your@email.com",
+      "subjectPlaceholder": "Message subject",
+      "messagePlaceholder": "Your message...",
+      "submitButton": "Send Message",
+      "submitting": "Sending...",
+      "sent": "Message Sent!",
+      "successMessage": "Thanks for your message! I'll get back to you as soon as possible.",
+      "errorMessage": "Error sending message. Please try again."
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "retry": "Retry",
+    "close": "Close",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm"
   },
   "footer": {
     "copyright": "© 2024 My Portfolio. All rights reserved."

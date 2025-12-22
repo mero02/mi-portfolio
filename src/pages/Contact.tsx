@@ -31,10 +31,10 @@ const Contact = () => {
         form.reset();
         setTimeout(() => setIsSubmitted(false), 5000); // Ocultar mensaje después de 5 segundos
       } else {
-        alert('Error al enviar el mensaje. Inténtalo de nuevo.');
+        alert(t('contact.form.errorMessage'));
       }
     } catch (error) {
-      alert('Error al enviar el mensaje. Inténtalo de nuevo.');
+      alert(t('contact.form.errorMessage'));
     } finally {
       setIsSubmitting(false);
     }
@@ -68,8 +68,8 @@ const Contact = () => {
                   theme === 'dark' ? 'text-red-500' : 'text-blue-600'
                 }`} />
                 <div>
-                  <h3 className="font-semibold">Email</h3>
-                  <p className="text-gray-900 dark:text-gray-500">mero2sp@gmail.com</p>
+                  <h3 className="font-semibold">{t('contact.info.email')}</h3>
+                  <p className="text-gray-900 dark:text-gray-500">{t('contact.info.emailValue')}</p>
                 </div>
               </div>
               <div className="flex items-center">
@@ -77,8 +77,8 @@ const Contact = () => {
                   theme === 'dark' ? 'text-red-500' : 'text-blue-600'
                 }`} />
                 <div>
-                  <h3 className="font-semibold">Teléfono</h3>
-                  <p className="text-gray-900 dark:text-gray-500">+5492804645445</p>
+                  <h3 className="font-semibold">{t('contact.info.phone')}</h3>
+                  <p className="text-gray-900 dark:text-gray-500">{t('contact.info.phoneValue')}</p>
                 </div>
               </div>
               <div className="flex items-center">
@@ -86,8 +86,8 @@ const Contact = () => {
                   theme === 'dark' ? 'text-red-500' : 'text-blue-600'
                 }`} />
                 <div>
-                  <h3 className="font-semibold">Ubicación</h3>
-                  <p className="text-gray-900 dark:text-gray-500">Argentina, Chubut</p>
+                  <h3 className="font-semibold">{t('contact.info.location')}</h3>
+                  <p className="text-gray-900 dark:text-gray-500">{t('contact.info.locationValue')}</p>
                 </div>
               </div>
             </div>
@@ -100,7 +100,7 @@ const Contact = () => {
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-sm font-medium mb-2">Nombre</label>
+                <label className="block text-sm font-medium mb-2">{t('contact.form.name')}</label>
                 <input
                   type="text"
                   name="name"
@@ -110,12 +110,12 @@ const Contact = () => {
                       ? 'border-red-600/50 focus:ring-red-500 bg-red-800/50 hover:bg-red-700/50'
                       : 'border-blue-300/50 focus:ring-blue-500 bg-white hover:bg-blue-50/30'
                   }`}
-                  placeholder="Tu nombre"
+                  placeholder={t('contact.form.namePlaceholder')}
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Email</label>
+                <label className="block text-sm font-medium mb-2">{t('contact.form.email')}</label>
                 <input
                   type="email"
                   name="email"
@@ -125,12 +125,12 @@ const Contact = () => {
                       ? 'border-red-600/50 focus:ring-red-500 bg-red-800/50 hover:bg-red-700/50'
                       : 'border-blue-300/50 focus:ring-blue-500 bg-white hover:bg-blue-50/30'
                   }`}
-                  placeholder="tu@email.com"
+                  placeholder={t('contact.form.emailPlaceholder')}
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Asunto</label>
+                <label className="block text-sm font-medium mb-2">{t('contact.form.subject')}</label>
                 <input
                   type="text"
                   name="subject"
@@ -140,12 +140,12 @@ const Contact = () => {
                       ? 'border-red-600/50 focus:ring-red-500 bg-red-800/50 hover:bg-red-700/50'
                       : 'border-blue-300/50 focus:ring-blue-500 bg-white hover:bg-blue-50/30'
                   }`}
-                  placeholder="Asunto del mensaje"
+                  placeholder={t('contact.form.subjectPlaceholder')}
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Mensaje</label>
+                <label className="block text-sm font-medium mb-2">{t('contact.form.message')}</label>
                 <textarea
                   name="message"
                   rows={5}
@@ -156,7 +156,7 @@ const Contact = () => {
                       ? 'border-red-600/50 focus:ring-red-500 bg-red-800/50 hover:bg-red-700/50'
                       : 'border-blue-300/50 focus:ring-blue-500 bg-white hover:bg-blue-50/30'
                   }`}
-                  placeholder="Tu mensaje..."
+                  placeholder={t('contact.form.messagePlaceholder')}
                 />
               </div>
 
@@ -170,17 +170,17 @@ const Contact = () => {
                 {isSubmitting ? (
                   <>
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                    Enviando...
+                    {t('contact.form.submitting')}
                   </>
                 ) : isSubmitted ? (
                   <>
                     <Send className="w-5 h-5 mr-2" />
-                    ¡Mensaje Enviado!
+                    {t('contact.form.sent')}
                   </>
                 ) : (
                   <>
                     <Send className="w-5 h-5 mr-2" />
-                    Enviar Mensaje
+                    {t('contact.form.submitButton')}
                   </>
                 )}
               </button>
@@ -196,7 +196,7 @@ const Contact = () => {
                   <p className={`text-sm ${
                     theme === 'dark' ? 'text-green-300' : 'text-green-700'
                   }`}>
-                    ¡Gracias por tu mensaje! Te responderé lo antes posible.
+                    {t('contact.form.successMessage')}
                   </p>
                 </motion.div>
               )}

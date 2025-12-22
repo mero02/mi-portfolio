@@ -13,7 +13,8 @@
   "about": {
     "title": "Acerca de Mí",
     "description": "Analista de Sistemas y Desarrollador de Software con experiencia en desarrollo frontend y backend, diseño de APIs REST y construcción de sistemas orientados a la resolución de problemas reales. Trabajo con FastAPI, Flask, React y bases de datos relacionales (SQLite, PostgreSQL). Cuento con experiencia en proyectos académicos, investigación aplicada y desarrollo personal, incluyendo contenedores con Docker, sistemas distribuidos, observabilidad y automatización de procesos. Actualmente curso la Licenciatura en Sistemas Informáticos y busco oportunidades para seguir creciendo en proyectos de software con impacto real.",
-    "downloadCV": "Descargar CV"
+    "downloadCV": "Descargar CV",
+    "experienceTitle": "Experiencia Profesional"
   },
   "aboutPage": {
     "professionalExperience": "Experiencia Profesional",
@@ -31,7 +32,42 @@
   },
   "contact": {
     "title": "Contáctame",
-    "description": "Ponte en contacto"
+    "description": "Ponte en contacto",
+    "info": {
+      "email": "Email",
+      "phone": "Teléfono",
+      "location": "Ubicación",
+      "emailValue": "mero2sp@gmail.com",
+      "phoneValue": "+5492804645445",
+      "locationValue": "Argentina, Chubut"
+    },
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "namePlaceholder": "Tu nombre",
+      "emailPlaceholder": "tu@email.com",
+      "subjectPlaceholder": "Asunto del mensaje",
+      "messagePlaceholder": "Tu mensaje...",
+      "submitButton": "Enviar Mensaje",
+      "submitting": "Enviando...",
+      "sent": "¡Mensaje Enviado!",
+      "successMessage": "¡Gracias por tu mensaje! Te responderé lo antes posible.",
+      "errorMessage": "Error al enviar el mensaje. Inténtalo de nuevo."
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "retry": "Reintentar",
+    "close": "Cerrar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "confirm": "Confirmar"
   },
   "footer": {
     "copyright": "© 2024 Mi Portafolio. Todos los derechos reservados."
