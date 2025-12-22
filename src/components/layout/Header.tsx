@@ -34,12 +34,14 @@ const Header = () => {
           {/* Logo/Brand */}
           <Link
             to="/"
-            className={`text-xl font-bold transition-colors ${
-              theme === 'dark' ? 'text-red-400 hover:text-red-300' : 'text-blue-600 hover:text-blue-700'
-            }`}
+            className="flex items-center"
           >
-            <span className={theme === 'dark' ? 'text-red-400' : 'text-blue-600'}>M</span>
-            <span className={theme === 'dark' ? 'text-red-300' : 'text-blue-500'}>S</span>
+            <img
+              src="/images/profile.png"
+              alt="Mauro San Pedro"
+              className="w-10 h-10 rounded-full object-cover border-2 border-current transition-colors hover:opacity-80"
+              style={{ color: theme === 'dark' ? '#f87171' : '#2563eb' }}
+            />
           </Link>
 
           {/* Desktop Navigation */}
