@@ -1,12 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
-import { Calendar, MapPin, Code, Briefcase } from 'lucide-react';
+import { Calendar, MapPin, Code, Briefcase, Download } from 'lucide-react';
+import { trackCVDownload } from '../utils/analytics';
 
 const About = () => {
   const { t } = useTranslation();
   const { theme } = useTheme();
-
+  const CV_URL = "https://drive.google.com/uc?export=download&id=1avMF_FinV5zZBtuxSKGSQ7hG1izu-Axb";
+  
   const experiences = [
     {
       year: '2025',
@@ -34,6 +36,12 @@ const About = () => {
     }
   ];
 
+  const handleDownloadCV = (e: React.MouseEvent) => {
+    e.preventDefault(); 
+    trackCVDownload();
+    window.open(CV_URL, '_blank');
+  }; 
+
   return (
     <section className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
@@ -48,7 +56,35 @@ const About = () => {
             {t('about.description')}
           </p>
         </motion.div>
-
+        
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <a
+            href={CV_URL}
+            download="Mauro-G-San-Pedro_CV.pdf"
+            onClick={handleDownloadCV}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`
+              inline-flex items-center gap-3 px-6 py-3 rounded-lg font-medium 
+              transition-all duration-300 transform hover:scale-105
+              ${theme === 'dark' 
+                ? 'bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-900/30' 
+                : 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30'
+              }
+            `}
+          >
+            <Download size={20} />
+            {t('downloadCV', 'Descargar CV')}
+          </a>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+            PDF • Actualizado recientemente
+          </p>
+        </motion.div>
+        
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
