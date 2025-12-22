@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="flex space-x-6">
             {/* Email */}
             <a
-              href="mailto:mero2sp@gmail.com"
+              href="mailto:mauro.g.sanpedro@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className={`p-3 rounded-full transition-all duration-300 ${

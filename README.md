@@ -176,6 +176,6 @@ Este proyecto está bajo la Licencia ISC.
 ## Contacto
 
 **Mauro G. San Pedro**
-- Email: [mero2sp@gmail.com]
+- Email: [mauro.g.sanpedro@gmail.com]
 - LinkedIn: [www.linkedin.com/in/mauro-san-pedro]
 - GitHub: [https://github.com/mero02]

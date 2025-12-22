@@ -81,7 +81,7 @@ const SEO = ({ page = 'home', project }: SEOProps) => {
       "sameAs": [
         "https://github.com/mero02",
         "https://www.linkedin.com/in/mauro-san-pedro/",
-        "mailto:mero2sp@gmail.com"
+        "mailto:mauro.g.sanpedro@gmail.com"
       ],
       "knowsAbout": [
         "React",
