@@ -7,8 +7,14 @@
     "contact": "Contact"
   },
   "home": {
-    "title": "Welcome to my Portfolio",
-    "subtitle": "Full Stack Developer"
+    "title": "Systems Analyst | Full Stack Developer",
+    "description": "I work with FastAPI, Flask, React and relational databases. I have experience in academic projects, applied research and personal development. I am currently studying for a Bachelor's degree in Computer Systems and looking for opportunities to grow in software projects with real impact.",
+    "stats": {
+      "experience": "Years of Experience",
+      "projects": "Completed Projects",
+      "technologies": "Technologies",
+      "scholarship": "Research Scholarship"
+    }
   },
   "about": {
     "title": "About Me",
@@ -20,7 +26,8 @@
     "professionalExperience": "Professional Experience",
     "location": "Argentina, Chubut",
     "experience": "4+ years of experience",
-    "role": "Systems Analyst"
+    "role": "Systems Analyst",
+    "cvInfo": "PDF • Recently updated"
   },
   "skills": {
     "title": "My Skills",
@@ -113,5 +120,32 @@
   },
   "footer": {
     "copyright": "© 2024 My Portfolio. All rights reserved."
+  },
+  "seo": {
+    "home": {
+      "title": "Welcome to my Portfolio",
+      "description": "Discover my work as a Systems Analyst and Full Stack Developer. Specialized in React, FastAPI, Python and modern technologies to create quality software solutions.",
+      "keywords": "developer portfolio, react, fastapi, python, full stack, systems analyst, web development"
+    },
+    "about": {
+      "title": "About Me",
+      "description": "Systems Analyst and Software Developer with experience in frontend and backend, REST API design and building systems oriented to solving real problems.",
+      "keywords": "about me, systems analyst, full stack developer, professional experience"
+    },
+    "skills": {
+      "title": "My Skills",
+      "description": "Technologies and tools I work with to create modern and efficient software solutions.",
+      "keywords": "skills, technologies, react, fastapi, python, typescript, full stack"
+    },
+    "projects": {
+      "title": "My Projects",
+      "description": "Portfolio of web development projects and full stack applications, including React applications, FastAPI APIs and enterprise solutions.",
+      "keywords": "projects, portfolio, web development, react, fastapi, applications, full stack"
+    },
+    "contact": {
+      "title": "Contact Me",
+      "description": "Get in touch to discuss development opportunities, collaborations or projects. Guaranteed response.",
+      "keywords": "contact, development, freelance, collaboration, projects"
+    }
   }
 }

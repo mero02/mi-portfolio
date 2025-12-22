@@ -7,8 +7,14 @@
     "contact": "Contacto"
   },
   "home": {
-    "title": "Bienvenido a mi Portafolio",
-    "subtitle": "Desarrollador Full Stack"
+    "title": "Analista de Sistemas | Desarrollador Full Stack",
+    "description": "Trabajo con FastAPI, Flask, React y bases de datos relacionales. Tengo experiencia en proyectos académicos, investigación aplicada y desarrollo personal. Actualmente curso la Licenciatura en Sistemas Informáticos y busco oportunidades para crecer en proyectos de software con impacto real.",
+    "stats": {
+      "experience": "Años de Experiencia",
+      "projects": "Proyectos Completados",
+      "technologies": "Tecnologías",
+      "scholarship": "Beca de Investigación"
+    }
   },
   "about": {
     "title": "Acerca de Mí",
@@ -20,7 +26,8 @@
     "professionalExperience": "Experiencia Profesional",
     "location": "Argentina, Chubut",
     "experience": "4+ años de experiencia",
-    "role": "Analista de Sistemas"
+    "role": "Analista de Sistemas",
+    "cvInfo": "PDF • Actualizado recientemente"
   },
   "skills": {
     "title": "Mis Habilidades",
@@ -99,17 +106,32 @@
       "errorMessage": "Error al enviar el mensaje. Inténtalo de nuevo."
     }
   },
-  "common": {
-    "loading": "Cargando...",
-    "error": "Error",
-    "success": "Éxito",
-    "retry": "Reintentar",
-    "close": "Cerrar",
-    "cancel": "Cancelar",
-    "save": "Guardar",
-    "edit": "Editar",
-    "delete": "Eliminar",
-    "confirm": "Confirmar"
+  "seo": {
+    "home": {
+      "title": "Bienvenido a mi Portafolio",
+      "description": "Descubre mi trabajo como Analista de Sistemas y Desarrollador Full Stack. Especializado en React, FastAPI, Python y tecnologías modernas para crear soluciones de software de calidad.",
+      "keywords": "portfolio desarrollador, react, fastapi, python, full stack, analista sistemas, desarrollo web"
+    },
+    "about": {
+      "title": "Acerca de Mí",
+      "description": "Analista de Sistemas y Desarrollador de Software con experiencia en frontend y backend, diseño de APIs REST y construcción de sistemas orientados a resolver problemas reales.",
+      "keywords": "sobre mí, analista sistemas, desarrollador full stack, experiencia profesional"
+    },
+    "skills": {
+      "title": "Mis Habilidades",
+      "description": "Tecnologías y herramientas con las que trabajo para crear soluciones de software modernas y eficientes.",
+      "keywords": "habilidades, tecnologías, react, fastapi, python, typescript, full stack"
+    },
+    "projects": {
+      "title": "Mis Proyectos",
+      "description": "Portafolio de proyectos de desarrollo web y aplicaciones full stack, incluyendo aplicaciones React, APIs FastAPI y soluciones empresariales.",
+      "keywords": "proyectos, portfolio, desarrollo web, react, fastapi, aplicaciones, full stack"
+    },
+    "contact": {
+      "title": "Contáctame",
+      "description": "Ponte en contacto para discutir oportunidades de desarrollo, colaboraciones o proyectos. Respuesta garantizada.",
+      "keywords": "contacto, desarrollo, freelance, colaboración, proyectos"
+    }
   },
   "footer": {
     "copyright": "© 2024 Mi Portafolio. Todos los derechos reservados."

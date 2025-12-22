@@ -1,20 +1,17 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, Calendar, Briefcase, Code, Award } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
 const Home = () => {
   const { theme } = useTheme();
+  const { t } = useTranslation();
 
   return (
     <>
-      <SEO 
-        title="Bienvenido a mi Portafolio"
-        description="Descubre mi trabajo como Analista de Sistemas y Desarrollador Full Stack. Especializado en React, FastAPI, Python y tecnologías modernas para crear soluciones de software de calidad."
-        keywords="portfolio desarrollador, react, fastapi, python, full stack, analista sistemas, desarrollo web"
-        type="website"
-      />
+      <SEO page="home" />
       <section className="min-h-screen flex flex-col items-center text-center px-4 py-20">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -38,7 +35,7 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Analista de Sistemas | Desarrollador Full Stack
+          {t('home.title')}
         </motion.p>
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -50,14 +47,14 @@ const Home = () => {
             <button className={`px-8 py-3 ${
               theme === 'dark' ? 'bg-red-600 hover:bg-red-700' : 'bg-blue-600 hover:bg-blue-700'
             } text-white rounded-lg transition-colors`}>
-              Ver Proyectos
+              {t('projects.title')}
             </button>
           </Link>
           <Link to="/contact">
             <button className={`px-8 py-3 border ${
               theme === 'dark' ? 'border-red-600 text-red-400 hover:bg-red-600 hover:text-white' : 'border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white'
             } rounded-lg transition-colors`}>
-              Contactar
+              {t('contact.title')}
             </button>
           </Link>
         </motion.div>
@@ -69,10 +66,7 @@ const Home = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <p className="text-lg text-gray-900 dark:text-gray-500 leading-relaxed">
-            Trabajo con FastAPI, Flask, React y bases de datos relacionales.
-            Tengo experiencia en proyectos académicos, investigación aplicada y desarrollo personal.
-            Actualmente curso la Licenciatura en Sistemas Informáticos y busco oportunidades
-            para crecer en proyectos de software con impacto real.
+            {t('home.description')}
           </p>
         </motion.div>
 
@@ -91,7 +85,7 @@ const Home = () => {
               }`} />
             </div>
             <div className="text-2xl font-bold mb-1">4+</div>
-            <div className="text-sm text-gray-700 dark:text-gray-400">Años de Experiencia</div>
+            <div className="text-sm text-gray-700 dark:text-gray-400">{t('home.stats.experience')}</div>
           </div>
 
           <div className="text-center">
@@ -103,7 +97,7 @@ const Home = () => {
               }`} />
             </div>
             <div className="text-2xl font-bold mb-1">8</div>
-            <div className="text-sm text-gray-700 dark:text-gray-400">Proyectos Completados</div>
+            <div className="text-sm text-gray-700 dark:text-gray-400">{t('home.stats.projects')}</div>
           </div>
 
           <div className="text-center">
@@ -115,7 +109,7 @@ const Home = () => {
               }`} />
             </div>
             <div className="text-2xl font-bold mb-1">15+</div>
-            <div className="text-sm text-gray-700 dark:text-gray-400">Tecnologías</div>
+            <div className="text-sm text-gray-700 dark:text-gray-400">{t('home.stats.technologies')}</div>
           </div>
 
           <div className="text-center">
@@ -127,7 +121,7 @@ const Home = () => {
               }`} />
             </div>
             <div className="text-2xl font-bold mb-1">1</div>
-            <div className="text-sm text-gray-700 dark:text-gray-400">Beca de Investigación</div>
+            <div className="text-sm text-gray-700 dark:text-gray-400">{t('home.stats.scholarship')}</div>
           </div>
         </motion.div>
       </motion.div>
