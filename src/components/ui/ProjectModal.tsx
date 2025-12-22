@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Project } from '../../types';
 import { useTheme } from '../../contexts/ThemeContext';
-import { X, ExternalLink, Github, Calendar, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ExternalLink, Github, Calendar, Star, ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from 'lucide-react';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -20,10 +20,17 @@ interface ProjectModalProps {
 
 const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
   const { theme } = useTheme();
+  const [zoom, setZoom] = useState(1);
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [lastPan, setLastPan] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      setZoom(1); // Reset zoom when modal opens
+      setPan({ x: 0, y: 0 });
+      setLastPan({ x: 0, y: 0 });
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -123,15 +130,45 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                       }}
                       pagination={{ clickable: true }}
                       className="h-full"
+                      onSlideChange={() => {
+                        setZoom(1);
+                        setPan({ x: 0, y: 0 });
+                        setLastPan({ x: 0, y: 0 });
+                      }}
                     >
                       {project.images.map((image, index) => (
-                        <SwiperSlide key={index} className={`relative ${
-                          theme === 'dark' ? 'bg-black/90' : 'bg-white'
-                        }`}>
+                        <SwiperSlide
+                          key={index}
+                          className={`relative overflow-hidden ${
+                            theme === 'dark' ? 'bg-black/90' : 'bg-white'
+                          }`}
+                          onMouseDown={(e) => {
+                            if (zoom > 1) {
+                              setIsDragging(true);
+                              setLastPan({ x: e.clientX - pan.x, y: e.clientY - pan.y });
+                            }
+                          }}
+                          onMouseMove={(e) => {
+                            if (isDragging && zoom > 1) {
+                              setPan({
+                                x: e.clientX - lastPan.x,
+                                y: e.clientY - lastPan.y
+                              });
+                            }
+                          }}
+                          onMouseUp={() => setIsDragging(false)}
+                          onMouseLeave={() => setIsDragging(false)}
+                        >
                           <img
                             src={image}
                             alt={`${project.title} - ${index + 1}`}
-                            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-full max-h-full object-contain"
+                            className="absolute top-1/2 left-1/2 max-w-full max-h-full object-contain select-none"
+                            style={{
+                              transform: `translate(-50%, -50%) translate(${pan.x}px, ${pan.y}px) scale(${zoom})`,
+                              cursor: zoom > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default',
+                              transition: isDragging ? 'none' : 'transform 0.2s'
+                            }}
+                            draggable={false}
                           />
                         </SwiperSlide>
                       ))}
@@ -144,6 +181,24 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                     <button className="swiper-button-next-custom absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors">
                       <ChevronRight className="w-5 h-5" />
                     </button>
+
+                    {/* Zoom controls */}
+                    <div className="absolute bottom-4 right-4 z-10 flex gap-2">
+                      <button
+                        onClick={() => setZoom(Math.max(0.5, zoom - 0.25))}
+                        className="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                        disabled={zoom <= 0.5}
+                      >
+                        <ZoomOut className="w-5 h-5" />
+                      </button>
+                      <button
+                        onClick={() => setZoom(Math.min(3, zoom + 0.25))}
+                        className="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                        disabled={zoom >= 3}
+                      >
+                        <ZoomIn className="w-5 h-5" />
+                      </button>
+                    </div>
                   </div>
                 </div>
 

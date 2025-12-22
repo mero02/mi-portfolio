@@ -76,7 +76,7 @@ export const projects: Project[] = [
       '/images/projects/restobar-2.png',
       '/images/projects/restobar-3.png'
     ],
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'Express', 'Docker'],
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Express', 'Docker', 'TypeScript'],
     category: 'fullstack',
     repository: 'https://github.com/Bikutah/ingenieria-3-grupo-2',
     featured: false,
@@ -195,7 +195,7 @@ export const projectCategories = [
 ];
 
 export const technologies = [
-  'React', 'Node.js', 'TypeScript', 'Python', 'Vue.js', 'Laravel',
-  'MongoDB', 'PostgreSQL', 'MySQL', 'Firebase', 'TailwindCSS',
-  'Express', 'Next.js', 'React Native', 'Flutter', 'GraphQL'
+  'React',  'FastAPI', 'TypeScript', 'Python','PostgreSQL', 'JWT', 'Docker', 'pytest',
+  'Telegram Bot API', 'SQLite', 'Chakra UI', 'LocalStack', 'AWS CLI', 'OpenTelemetry', 'Jaeger', 'SNMP','Regex' , 
+  'Google Colab', 'BERT', 'RAG', 'JavaScript', 'HTML5 Canvas', 'CSS', 'L-systems', 'Fractal Geometry'
 ];

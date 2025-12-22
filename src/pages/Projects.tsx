@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../contexts/ThemeContext';
-import { projects, projectCategories } from '../data/projects';
+import { projects, projectCategories, technologies } from '../data/projects';
 import { Project } from '../types';
 import ProjectCard from '../components/ui/ProjectCard';
 import ProjectModal from '../components/ui/ProjectModal';
@@ -16,16 +16,33 @@ const Projects = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
+  const [selectedStatus, setSelectedStatus] = useState<string>('all');
+  const [selectedYear, setSelectedYear] = useState<string>('all');
+
+  const uniqueStatuses = useMemo(() => {
+    const statuses = Array.from(new Set(projects.map(p => p.status)));
+    return statuses;
+  }, []);
+
+  const uniqueYears = useMemo(() => {
+    const years = Array.from(new Set(projects.map(p => p.year.toString()))).sort((a, b) => parseInt(b) - parseInt(a));
+    return years;
+  }, []);
 
   const filteredProjects = useMemo(() => {
     return projects.filter((project) => {
       const matchesCategory = selectedCategory === 'all' || project.category === selectedCategory;
       const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
-      return matchesCategory && matchesSearch;
+                            project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                            project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
+      const matchesTechnologies = selectedTechnologies.length === 0 ||
+                                  selectedTechnologies.every(tech => project.technologies.includes(tech));
+      const matchesStatus = selectedStatus === 'all' || project.status === selectedStatus;
+      const matchesYear = selectedYear === 'all' || project.year.toString() === selectedYear;
+      return matchesCategory && matchesSearch && matchesTechnologies && matchesStatus && matchesYear;
     });
-  }, [selectedCategory, searchTerm]);
+  }, [selectedCategory, searchTerm, selectedTechnologies, selectedStatus, selectedYear]);
 
   return (
     <section className="py-20 px-4">
@@ -105,13 +122,111 @@ const Projects = () => {
                             ? 'bg-red-600 text-white shadow-lg'
                             : 'bg-blue-600 text-white shadow-lg'
                           : theme === 'dark'
-                          ? 'bg-red-900/20 border border-red-800/50 text-red-300 hover:bg-red-900/30'
-                          : 'bg-blue-50 border border-blue-200 text-blue-700 hover:bg-blue-100'
+                            ? 'bg-red-900/20 border border-red-800/50 text-red-300 hover:bg-red-900/30'
+                            : 'bg-blue-50 border border-blue-200 text-blue-700 hover:bg-blue-100'
                       }`}
                     >
                       {category.label}
                     </button>
                   ))}
+                </div>
+
+                {/* Advanced filters */}
+                <div className={`mt-6 p-4 rounded-lg border ${
+                  theme === 'dark'
+                    ? 'border-red-800/30 bg-red-900/5'
+                    : 'border-blue-200/30 bg-blue-50/30'
+                }`}>
+                  <h3 className="text-lg font-semibold mb-4">Filtros Avanzados</h3>
+                  <div className="space-y-4">
+                    {/* Technologies */}
+                    <div>
+                      <h4 className="text-sm font-medium mb-2">Tecnologías</h4>
+                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
+                        {technologies.slice(0, 10).map((tech) => (
+                          <label key={tech} className="flex items-center gap-2 cursor-pointer text-sm">
+                            <input
+                              type="checkbox"
+                              checked={selectedTechnologies.includes(tech)}
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setSelectedTechnologies([...selectedTechnologies, tech]);
+                                } else {
+                                  setSelectedTechnologies(selectedTechnologies.filter(t => t !== tech));
+                                }
+                              }}
+                              className={`rounded border-gray-300 ${
+                                theme === 'dark' ? 'bg-red-800/50 border-red-600/50' : ''
+                              }`}
+                            />
+                            <span>{tech}</span>
+                          </label>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Status and Year */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium mb-1">Estado</label>
+                        <select
+                          value={selectedStatus}
+                          onChange={(e) => setSelectedStatus(e.target.value)}
+                          className={`w-full px-3 py-2 rounded-lg border text-sm ${
+                            theme === 'dark'
+                              ? 'border-red-600/50 bg-red-800/50 text-gray-200'
+                              : 'border-blue-300/50 bg-white'
+                          }`}
+                        >
+                          <option value="all">Todos</option>
+                          {uniqueStatuses.map((status) => (
+                            <option key={status} value={status}>
+                              {status === 'completed' ? 'Completado' :
+                               status === 'in-progress' ? 'En progreso' : 'Planificado'}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium mb-1">Año</label>
+                        <select
+                          value={selectedYear}
+                          onChange={(e) => setSelectedYear(e.target.value)}
+                          className={`w-full px-3 py-2 rounded-lg border text-sm ${
+                            theme === 'dark'
+                              ? 'border-red-600/50 bg-red-800/50 text-gray-200'
+                              : 'border-blue-300/50 bg-white'
+                          }`}
+                        >
+                          <option value="all">Todos</option>
+                          {uniqueYears.map((year) => (
+                            <option key={year} value={year}>{year}</option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* Reset button */}
+                    <div className="flex justify-center">
+                      <button
+                        onClick={() => {
+                          setSelectedCategory('all');
+                          setSelectedTechnologies([]);
+                          setSelectedStatus('all');
+                          setSelectedYear('all');
+                          setSearchTerm('');
+                        }}
+                        className={`px-6 py-2 rounded-lg text-sm font-medium transition-colors ${
+                          theme === 'dark'
+                            ? 'bg-red-600 hover:bg-red-700 text-white'
+                            : 'bg-blue-600 hover:bg-blue-700 text-white'
+                        }`}
+                      >
+                        Limpiar filtros
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             )}
@@ -133,7 +248,7 @@ const Projects = () => {
         {/* Projects Grid */}
         <AnimatePresence mode="wait">
           <motion.div
-            key={`${selectedCategory}-${searchTerm}`}
+            key={`${selectedCategory}-${searchTerm}-${selectedTechnologies.join(',')}-${selectedStatus}-${selectedYear}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

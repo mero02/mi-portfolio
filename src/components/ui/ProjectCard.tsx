@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Project } from '../../types';
 import { useTheme } from '../../contexts/ThemeContext';
@@ -11,6 +11,7 @@ interface ProjectCardProps {
 
 const ProjectCard = memo(({ project, onClick }: ProjectCardProps) => {
   const { theme } = useTheme();
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const getStatusColor = (status: Project['status']) => {
     switch (status) {
@@ -63,18 +64,25 @@ const ProjectCard = memo(({ project, onClick }: ProjectCardProps) => {
       )}
 
       {/* Image */}
-      <div className={`relative h-48 overflow-hidden ${
+      <div className={`relative h-48 overflow-hidden group/image ${
         theme === 'dark' ? 'bg-gray-800' : 'bg-gray-100'
       }`}>
         <img
           src={project.images[0] || '/images/placeholder.jpg'}
           alt={project.title}
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-full max-h-full object-contain"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-full max-h-full object-contain transition-transform duration-300 group-hover/image:scale-105"
           loading="lazy"
+          onLoad={() => setImageLoaded(true)}
         />
         <div className={`absolute inset-0 bg-gradient-to-t ${
           theme === 'dark' ? 'from-black/60' : 'from-black/40'
-        } to-transparent`} />
+        } to-transparent transition-opacity duration-300 group-hover/image:opacity-75`} />
+        {/* Placeholder */}
+        {!imageLoaded && (
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-200 dark:bg-gray-700 animate-pulse">
+            <div className="w-12 h-12 bg-gray-300 dark:bg-gray-600 rounded"></div>
+          </div>
+        )}
       </div>
 
       {/* Content */}
