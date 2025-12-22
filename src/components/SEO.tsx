@@ -27,6 +27,44 @@ const SEO = ({
     ? title 
     : `${title} | Mauro G. San Pedro`;
 
+  // Structured data as string to avoid parsing issues
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mauro G. San Pedro",
+    "jobTitle": "Analista de Sistemas y Desarrollador Full Stack",
+    "description": description,
+    "url": url,
+    "image": image,
+    "sameAs": [
+      "https://github.com/mero02",
+      "https://www.linkedin.com/in/mauro-san-pedro/",
+      "mailto:mero2sp@gmail.com"
+    ],
+    "knowsAbout": [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "Python",
+      "PostgreSQL",
+      "Docker",
+      "Full Stack Development"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Universidad Nacional de la Patagonia San Juan Bosco"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chubut",
+      "addressCountry": "AR"
+    }
+  };
+
   return (
     <Helmet>
       {/* Basic Meta Tags */}
@@ -71,44 +109,10 @@ const SEO = ({
       <link rel="canonical" href={url} />
       
       {/* Structured Data - Person */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Person",
-          "name": "Mauro G. San Pedro",
-          "jobTitle": "Analista de Sistemas y Desarrollador Full Stack",
-          "description": description,
-          "url": url,
-          "image": image,
-          "sameAs": [
-            "https://github.com/mero02",
-            "https://www.linkedin.com/in/mauro-san-pedro/",
-            "mailto:mero2sp@gmail.com"
-          ],
-          "knowsAbout": [
-            "React",
-            "TypeScript",
-            "FastAPI",
-            "Python",
-            "PostgreSQL",
-            "Docker",
-            "Full Stack Development"
-          ],
-          "worksFor": {
-            "@type": "Organization",
-            "name": "Freelance"
-          },
-          "alumniOf": {
-            "@type": "EducationalOrganization",
-            "name": "Universidad Nacional de la Patagonia San Juan Bosco"
-          },
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Chubut",
-            "addressCountry": "AR"
-          }
-        })}
-      </script>
+      <script 
+        type="application/ld+json" 
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
     </Helmet>
   );
 };
