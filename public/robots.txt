@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mauro-sanpedro.com/sitemap.xml
+
+# Optimizaciones SEO
+# Permitir indexación de recursos estáticos
+Allow: /images/
+Allow: /assets/
+
+# Bloquear archivos innecesarios
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /*.map$
+
+# Configuración de crawl-delay
+Crawl-delay: 1

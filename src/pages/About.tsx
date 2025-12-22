@@ -4,38 +4,14 @@ import { useTheme } from '../contexts/ThemeContext';
 import { Calendar, MapPin, Code, Briefcase, Download } from 'lucide-react';
 import { trackCVDownload } from '../utils/analytics';
 import SEO from '../components/SEO';
+import { useExperiences } from '../hooks/useExperiences';
 
 const About = () => {
   const { t } = useTranslation();
   const { theme } = useTheme();
   const CV_URL = "https://drive.google.com/uc?export=download&id=1avMF_FinV5zZBtuxSKGSQ7hG1izu-Axb";
   
-  const experiences = [
-    {
-      year: '2025',
-      title: 'Taller experimental sobre herramientas de desarrollo frontend',
-      company: 'Universidad Nacional de la Patagonia San Juan Bosco',
-      description: 'Participé en un taller experimental probando una herramienta de desarrollo frontend construida por profesores universitarios, proporcionando feedback sobre la experiencia de uso.'
-    },
-    {
-      year: '2025',
-      title: 'Becario en Investigación y Desarrollo',
-      company: 'Universidad Nacional de la Patagonia San Juan Bosco',
-      description: 'Participé en proyectos de inteligencia artificial y análisis de datos en colaboración con el Banco del Chubut. Trabajé en entrenamiento y evaluación de modelos de lenguaje (LLM), segmentación y procesamiento de documentos, automatización de pruebas y desarrollo de herramientas en Google Colab.'
-    },
-    {
-      year: '2025',
-      title: 'Consultor en Tecnología y Soporte IT',
-      company: 'Palacio Municipal de Gaiman',
-      description: 'Brindé asesoramiento y soporte técnico a empleados en el uso de sistemas y equipos informáticos. Diagnóstico y resolución de problemas en hardware y software, mantenimiento preventivo y correctivo.'
-    },
-    {
-      year: '2012-2023',
-      title: 'Empleado de Comercio',
-      company: 'S.A.I.E.P',
-      description: 'Desempeñé funciones operativas y de atención al cliente en un entorno comercial de alta demanda, gestionando resolución de incidencias y situaciones imprevistas.'
-    }
-  ];
+  const experiences = useExperiences();
 
   const handleDownloadCV = (e: React.MouseEvent) => {
     e.preventDefault(); 

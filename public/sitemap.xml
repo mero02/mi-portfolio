@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://mauro-sanpedro.com/</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mauro-sanpedro.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mauro-sanpedro.com/en" />
+  </url>
+
+  <!-- Acerca de -->
+  <url>
+    <loc>https://mauro-sanpedro.com/about</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mauro-sanpedro.com/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mauro-sanpedro.com/en/about" />
+  </url>
+
+  <!-- Habilidades -->
+  <url>
+    <loc>https://mauro-sanpedro.com/skills</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mauro-sanpedro.com/skills" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mauro-sanpedro.com/en/skills" />
+  </url>
+
+  <!-- Proyectos -->
+  <url>
+    <loc>https://mauro-sanpedro.com/projects</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mauro-sanpedro.com/projects" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mauro-sanpedro.com/en/projects" />
+  </url>
+
+  <!-- Contacto -->
+  <url>
+    <loc>https://mauro-sanpedro.com/contact</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mauro-sanpedro.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mauro-sanpedro.com/en/contact" />
+  </url>
+
+  <!-- Proyectos individuales -->
+  <url>
+    <loc>https://mauro-sanpedro.com/projects/gestion-finanzas-personales</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mauro-sanpedro.com/projects/sistema-gestion-turnos</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mauro-sanpedro.com/projects/sistema-monitoreo-ambiental</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mauro-sanpedro.com/projects/ruleta-interactiva-eventos</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mauro-sanpedro.com/projects/sistema-gestion-restobar</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mauro-sanpedro.com/projects/ecommerce-productos-tienda</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mauro-sanpedro.com/projects/simulador-amazon-s3</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mauro-sanpedro.com/projects/sistema-monitoreo-observabilidad</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mauro-sanpedro.com/projects/extractor-patentes-vehiculos</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mauro-sanpedro.com/projects/chatbot-documentos-pdf</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mauro-sanpedro.com/projects/generador-curvas-fractales</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

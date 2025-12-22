@@ -2,12 +2,12 @@ import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../contexts/ThemeContext';
-import { projects, projectCategories, technologies } from '../data/projects';
 import { Project } from '../types';
 import ProjectCard from '../components/ui/ProjectCard';
 import ProjectModal from '../components/ui/ProjectModal';
 import { Filter } from 'lucide-react';
 import SEO from '../components/SEO';
+import { useProjects } from '../hooks/useProjects';
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -21,29 +21,32 @@ const Projects = () => {
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
   const [selectedYear, setSelectedYear] = useState<string>('all');
 
+  // Usar el hook para obtener datos internacionalizados
+  const { projects, projectCategories, technologies } = useProjects();
+
   const uniqueStatuses = useMemo(() => {
-    const statuses = Array.from(new Set(projects.map(p => p.status)));
+    const statuses = Array.from(new Set(projects.map((p: Project) => p.status)));
     return statuses;
-  }, []);
+  }, [projects]);
 
   const uniqueYears = useMemo(() => {
-    const years = Array.from(new Set(projects.map(p => p.year.toString()))).sort((a, b) => parseInt(b) - parseInt(a));
+    const years = Array.from(new Set(projects.map((p: Project) => p.year.toString()))).sort((a, b) => parseInt(b) - parseInt(a));
     return years;
-  }, []);
+  }, [projects]);
 
   const filteredProjects = useMemo(() => {
-    return projects.filter((project) => {
+    return projects.filter((project: Project) => {
       const matchesCategory = selectedCategory === 'all' || project.category === selectedCategory;
       const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                             project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
+                            project.technologies.some((tech: string) => tech.toLowerCase().includes(searchTerm.toLowerCase()));
       const matchesTechnologies = selectedTechnologies.length === 0 ||
                                   selectedTechnologies.every(tech => project.technologies.includes(tech));
       const matchesStatus = selectedStatus === 'all' || project.status === selectedStatus;
       const matchesYear = selectedYear === 'all' || project.year.toString() === selectedYear;
       return matchesCategory && matchesSearch && matchesTechnologies && matchesStatus && matchesYear;
     });
-  }, [selectedCategory, searchTerm, selectedTechnologies, selectedStatus, selectedYear]);
+  }, [projects, selectedCategory, searchTerm, selectedTechnologies, selectedStatus, selectedYear]);
 
   const getStatusText = (status: string) => {
     return t(`projects.filters.statusOptions.${status}`);
@@ -127,7 +130,7 @@ const Projects = () => {
                   className="mt-4 overflow-hidden"
                 >
                   <div className="flex flex-wrap gap-2 justify-center">
-                    {projectCategories.map((category) => (
+                    {projectCategories.map((category: { value: string; label: string }) => (
                       <button
                         key={category.value}
                         onClick={() => setSelectedCategory(category.value)}
@@ -158,7 +161,7 @@ const Projects = () => {
                       <div>
                         <h4 className="text-sm font-medium mb-2">{t('projects.filters.technologies')}</h4>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
-                          {technologies.slice(0, 10).map((tech) => (
+                          {technologies.slice(0, 10).map((tech: string) => (
                             <label key={tech} className="flex items-center gap-2 cursor-pointer text-sm">
                               <input
                                 type="checkbox"
@@ -194,7 +197,7 @@ const Projects = () => {
                             }`}
                           >
                             <option value="all">{t('projects.filters.all')}</option>
-                            {uniqueStatuses.map((status) => (
+                            {uniqueStatuses.map((status: string) => (
                               <option key={status} value={status}>
                                 {getStatusText(status)}
                               </option>
@@ -214,7 +217,7 @@ const Projects = () => {
                             }`}
                           >
                             <option value="all">{t('projects.filters.all')}</option>
-                            {uniqueYears.map((year) => (
+                            {uniqueYears.map((year: string) => (
                               <option key={year} value={year}>{year}</option>
                             ))}
                           </select>
@@ -269,7 +272,7 @@ const Projects = () => {
               transition={{ duration: 0.3 }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
-              {filteredProjects.map((project, index) => (
+              {filteredProjects.map((project: Project, index: number) => (
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, y: 20 }}
